@@ -1,1 +1,1 @@
-# rock-paper-scissor
+# Trying to make a rock-paper-scissor game
