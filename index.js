@@ -34,3 +34,28 @@ if (userChoice.toLowerCase() === "rock") {
 else {
     console.log("Your input is invalid. Choose Rock/Paper/Scissor!!")
 }
+
+//---computer's choice versus user's choice----//
+
+//winning scenario//
+if ((getComputerChoice === 1) && (userChoice.toLowerCase() === "paper")) {
+    console.log("Congrats!! You win!!! Paper beats Rock")
+} else if ((getComputerChoice === 2) && (userChoice.toLowerCase() === "scissor")) {
+    console.log("Congrats!! You win!!! Scissor beats Paper")
+} else if ((getComputerChoice === 3) && (userChoice.toLowerCase() === "rock")) {
+    console.log("Congrats!! You win!!! Rock beats Scissor")
+}
+
+//losing scenario//
+else if ((getComputerChoice === 1) && (userChoice.toLowerCase() === "scissor")) {
+    console.log("You Lose! Rock beats Scissor.")
+} else if ((getComputerChoice === 2) && (userChoice.toLowerCase() === "rock")) {
+    console.log("You Lose! Paper beats Rock.")
+} else if ((getComputerChoice === 3) && (userChoice.toLowerCase() === "paper")) {
+    console.log("You Lose! Scissor beats Paper.")
+}
+
+//draw scenario (the rest)//
+else {
+    console.log("It's a draw.")
+}
