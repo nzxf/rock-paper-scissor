@@ -7,12 +7,6 @@ function getComputerChoice() {
     return options[random];
 }
 
-//randomizer outliner tester//
-//(if any number outside 1,2, and 3 was chosen, this message will be viewed)//
-else {
-    console.log("Computer accidentally hit its own head and fainted")
-}
-
 //user's choice input// 
 let userChoice = prompt("What do you choose? Rock, Paper or Scissor?")
 
