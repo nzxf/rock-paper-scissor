@@ -1,4 +1,4 @@
-//game requirement//
+//game rule//
 const options = ['rock', 'paper', 'scissor'];
 
 //computer random choice//
@@ -7,45 +7,56 @@ function getComputerChoice() {
     return options[random];
 }
 
-//user's choice input// 
-let userChoice = prompt("What do you choose? Rock, Paper or Scissor?")
+// const lastFiveMatch = []
+// let match = 0
 
-//insensitive case input//
-if (userChoice.toLowerCase() === "rock") {
-    console.log("You chose ROCK")
-} else if (userChoice.toLowerCase() === "paper") {
-    console.log("You chose PAPER")
-} else if (userChoice.toLowerCase() === "scissor") {
-    console.log("You chose SCISSOR")
+
+function playRound(playerSelection, computerSelection) {
+    liveReport(`${playerSelection.toUpperCase()} vs ${computerSelection.toUpperCase()}`)
+    if (playerSelection === computerSelection) {
+        // lastFiveMatch[match] = 'DRAW'
+        liveReport(`It's a Tie! Both of you chose ${playerSelection}`)
+    } else if (((playerSelection === 'rock' && computerSelection === 'scissor') ||
+        (playerSelection === 'paper' && computerSelection === 'rock')) ||
+        (playerSelection === 'scissor' && computerSelection === 'paper')) {
+        // lastFiveMatch[match] = 'WIN'
+        liveReport(`You Win! Your ${playerSelection} beats Computer's ${computerSelection}`)
+    } else {
+        // lastFiveMatch[match] = 'LOSE'
+        liveReport(`You Lose! Computer's ${computerSelection} beats your ${playerSelection}`)
+    }
 }
 
-//to filter user input (only accept 'rock', 'paper' or 'scissor')//
+// const liveReport = document.querySelector('#liveReport')
+const buttons = document.querySelectorAll('button')
 
-else {
-    console.log("Your input is invalid. Choose Rock/Paper/Scissor!!")
+
+for (let button of buttons) {
+    button.addEventListener('click', function () {
+        // const arena = document.querySelector('#arena')
+        // const report = document.createElement('P')
+        // arena.append(report)
+        // liveReport.innerText = `You chose ${button.innerText}`
+        liveReport(`You chose ${button.value}`)
+        playerSelection = button.value
+        game()
+    })
 }
 
-//---computer's choice versus user's choice----//
-
-//winning scenario//
-if ((getComputerChoice === 1) && (userChoice.toLowerCase() === "paper")) {
-    console.log("Congrats!! You win!!! Paper beats Rock")
-} else if ((getComputerChoice === 2) && (userChoice.toLowerCase() === "scissor")) {
-    console.log("Congrats!! You win!!! Scissor beats Paper")
-} else if ((getComputerChoice === 3) && (userChoice.toLowerCase() === "rock")) {
-    console.log("Congrats!! You win!!! Rock beats Scissor")
+function game() {
+    // while (match <= 4) {
+    const computerSelection = getComputerChoice();
+    liveReport(`Computer chose ${computerSelection}`)
+    return playRound(playerSelection, computerSelection)
+    //     match++
+    // }
+    // console.log('Your last five matches: ')
+    // console.log(lastFiveMatch)
 }
 
-//losing scenario//
-else if ((getComputerChoice === 1) && (userChoice.toLowerCase() === "scissor")) {
-    console.log("You Lose! Rock beats Scissor.")
-} else if ((getComputerChoice === 2) && (userChoice.toLowerCase() === "rock")) {
-    console.log("You Lose! Paper beats Rock.")
-} else if ((getComputerChoice === 3) && (userChoice.toLowerCase() === "paper")) {
-    console.log("You Lose! Scissor beats Paper.")
-}
-
-//draw scenario (the rest)//
-else {
-    console.log("It's a draw.")
+function liveReport(x) {
+    const arena = document.querySelector('#arena')
+    const oneLine = document.createElement('P')
+    arena.append(oneLine)
+    oneLine.innerText = x
 }
