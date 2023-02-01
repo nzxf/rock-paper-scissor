@@ -1,62 +1,96 @@
-//game rule//
+//game rule
 const options = ['rock', 'paper', 'scissor'];
 
-//computer random choice//
+//computer random hand
 function getComputerChoice() {
     const random = Math.floor(Math.random() * parseInt(options.length));
     return options[random];
 }
 
-// const lastFiveMatch = []
-// let match = 0
+//player input hand
+const buttons = document.querySelectorAll('.playerHand')
+function getPlayerChoice() {
+    for (let button of buttons) {
+        button.addEventListener('click', function () {
+            clear()
+            liveReport(`You chose ${button.value}`)
+            playerSelection = button.value
+            game()
+        })
+    }
+}
 
-
+//one round play
+const yourScore = document.querySelector('#your-score')
+const computerScore = document.querySelector('#computer-score')
+let yourScoring = 0
+let computerScoring = 0
 function playRound(playerSelection, computerSelection) {
-    liveReport(`${playerSelection.toUpperCase()} vs ${computerSelection.toUpperCase()}`)
+    liveReport(`${playerSelection} vs ${computerSelection}`)
     if (playerSelection === computerSelection) {
-        // lastFiveMatch[match] = 'DRAW'
         liveReport(`It's a Tie! Both of you chose ${playerSelection}`)
     } else if (((playerSelection === 'rock' && computerSelection === 'scissor') ||
         (playerSelection === 'paper' && computerSelection === 'rock')) ||
         (playerSelection === 'scissor' && computerSelection === 'paper')) {
-        // lastFiveMatch[match] = 'WIN'
-        liveReport(`You Win! Your ${playerSelection} beats Computer's ${computerSelection}`)
+        yourScoring += 1
+        liveReport(`You Win! Your ${playerSelection} wins againts Computer's ${computerSelection}`)
     } else {
-        // lastFiveMatch[match] = 'LOSE'
+        computerScoring += 1
         liveReport(`You Lose! Computer's ${computerSelection} beats your ${playerSelection}`)
     }
+    yourScore.innerText = yourScoring
+    computerScore.innerText = computerScoring
 }
 
-// const liveReport = document.querySelector('#liveReport')
-const buttons = document.querySelectorAll('button')
-
-
-for (let button of buttons) {
-    button.addEventListener('click', function () {
-        // const arena = document.querySelector('#arena')
-        // const report = document.createElement('P')
-        // arena.append(report)
-        // liveReport.innerText = `You chose ${button.innerText}`
-        liveReport(`You chose ${button.value}`)
-        playerSelection = button.value
-        game()
-    })
-}
-
-function game() {
-    // while (match <= 4) {
-    const computerSelection = getComputerChoice();
-    liveReport(`Computer chose ${computerSelection}`)
-    return playRound(playerSelection, computerSelection)
-    //     match++
-    // }
-    // console.log('Your last five matches: ')
-    // console.log(lastFiveMatch)
-}
-
+//display match on page
+const display = document.querySelector('#display')
 function liveReport(x) {
-    const arena = document.querySelector('#arena')
     const oneLine = document.createElement('P')
-    arena.append(oneLine)
+    display.append(oneLine)
     oneLine.innerText = x
 }
+
+//five win match
+const match = 2
+isGameOver = false
+document.getElementById('playAgain').disabled = true
+function game() {
+    if (!isGameOver) {
+        const computerSelection = getComputerChoice();
+        liveReport(`Computer chose ${computerSelection}`)
+        playRound(playerSelection, computerSelection)
+        if ((yourScoring === match) || (computerScoring === match)) {
+            isGameOver = true
+            document.getElementById('buttonRock').disabled = true
+            document.getElementById('buttonPaper').disabled = true
+            document.getElementById('buttonScissor').disabled = true
+            document.getElementById('playAgain').disabled = false
+            liveReport(`FINAL SCORE => Computer: ${computerScoring} vs ${yourScoring} :You`)
+        }
+    }
+
+}
+
+//play again = reset
+const buttonPlayAgain = document.querySelector('#playAgain')
+buttonPlayAgain.addEventListener('click', function () {
+    isGameOver = false
+    document.getElementById('buttonRock').disabled = false
+    document.getElementById('buttonPaper').disabled = false
+    document.getElementById('buttonScissor').disabled = false
+    document.getElementById('playAgain').disabled = true
+    yourScoring = 0
+    computerScoring = 0
+    yourScore.innerText = yourScoring
+    computerScore.innerText = computerScoring
+    clear()
+})
+
+//clear display
+function clear() {
+    display.replaceChildren()
+}
+
+
+//game ready to play
+getPlayerChoice()
