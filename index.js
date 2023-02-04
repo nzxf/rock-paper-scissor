@@ -74,7 +74,7 @@ function game() {
             document.getElementById('buttonPaper').disabled = true
             document.getElementById('buttonScissor').disabled = true
             document.getElementById('playAgain').disabled = false
-            liveReport('----------------------------------')
+            display.append(document.createElement('hr'))
             liveReport('FINAL SCORE')
             liveReportBold(`|Computer| ${computerScoring} : ${yourScoring} |You|`)
             if (yourScoring === match) {
@@ -82,7 +82,7 @@ function game() {
             } else {
                 liveReport("It's okay. You can try again.")
             }
-            liveReport('----------------------------------')
+            display.append(document.createElement('hr'))
         }
     }
 
