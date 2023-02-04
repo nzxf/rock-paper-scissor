@@ -7,24 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock! Paper! Scissor!</title>
     <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Can you win againts a computer?</h1>
-    <div id="score">
-        <div>|Computer|
-            <span id="computer-score" value="">#</span> vs
-            <span id="your-score" value="">#</span> |You|
+    <div id="bar-top"></div>
+    <div id="main-body">
+        <div id="body-left">
+            <div>
+                <img class="avatar-left" src="/images/robot.png" alt="picture of a robot">
+            </div>
+            <div id="control-left">
+                <button>ROX</button>
+                <button>PAP3R</button>
+                <button>CLIPPER</button>
+            </div>
+        </div>
+        <div id="body-center"></div>
+        <div id="body-right">
+            <div id="trophy-right"></div>
+            <div class="score-board">
+                <p id="your-score" value="">#</p>
+            </div>
+            <div>
+                <img class="avatar-right" src="/images/human.png" alt="picture of a human">
+            </div>
+            <div id="control-right">
+                <button>ROCK</button>
+                <button>PAPER</button>
+                <button>SCISSOR</button>
+            </div>
         </div>
     </div>
-    <br>
-    <div id="playerInput">
-        <button class="playerHand" id="buttonRock" value="rock">Rock</button>
-        <button class="playerHand" id="buttonPaper" value="paper">Paper</button>
-        <button class="playerHand" id="buttonScissor" value="scissor">Scissor</button>
-        <button id="playAgain">Play Again?</button>
+    <div id="bar-bottom">
+        <span>
+            <a href="http://github.com/nzxf">nzxf</a>
+        </span>
     </div>
-    <div id="display"></div>
+
 
 
     <script src="index.js"></script>
