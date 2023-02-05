@@ -153,7 +153,7 @@ function clear() {
 const midDisplayCenter = document.querySelector('#middle-display-center')
 function versusImage() {
     const versus = document.createElement('IMG')
-    versus.src = `/images/versus.png`
+    versus.src = `images/versus.png`
     versus.width = "200"
     versus.style.opacity = "75%"
     midDisplayCenter.append(versus)
@@ -164,14 +164,14 @@ const avatarHolderLeft = document.querySelector('.avatar-holder-left')
 const avatarHolderRight = document.querySelector('.avatar-holder-right')
 function addAvatar(player, location) {
     const addingAvatar = document.createElement('IMG')
-    addingAvatar.src = `/images/${player}-neutral.png`
+    addingAvatar.src = `images/${player}-neutral.png`
     addingAvatar.width = "200"
     location.replaceChildren()
     location.append(addingAvatar)
 }
 function addLostAvatar(player, location) {
     const addingLostAvatar = document.createElement('IMG')
-    addingLostAvatar.src = `/images/${player}-lost.png`
+    addingLostAvatar.src = `images/${player}-lost.png`
     addingLostAvatar.width = "200"
     location.replaceChildren()
     location.append(addingLostAvatar)
@@ -212,14 +212,14 @@ const midDisplayRight = document.querySelector('#middle-display-right')
 const midDisplayLeft = document.querySelector('#middle-display-left')
 function handRight(x) {
     const move = document.createElement('IMG')
-    move.src = `/images/${x}-right.png`
+    move.src = `images/${x}-right.png`
     move.width = "200"
     move.classList.add('from-right')
     midDisplayRight.append(move)
 }
 function handLeft(x) {
     const move = document.createElement('IMG')
-    move.src = `/images/${x}-left.png`
+    move.src = `images/${x}-left.png`
     move.width = "200"
     move.classList.add('from-left')
     midDisplayLeft.append(move)
@@ -229,14 +229,14 @@ function handLeft(x) {
 const trophyRightSlot = document.querySelector('#trophy-right')
 function addTrophyRight() {
     const trophyRight = document.createElement('IMG')
-    trophyRight.src = "/images/trophy.png"
+    trophyRight.src = "images/trophy.png"
     trophyRight.width = "30"
     trophyRightSlot.append(trophyRight)
 }
 const trophyLeftSlot = document.querySelector('#trophy-left')
 function addTrophyLeft() {
     const trophyLeft = document.createElement('IMG')
-    trophyLeft.src = "/images/trophy.png"
+    trophyLeft.src = "images/trophy.png"
     trophyLeft.width = "30"
     trophyLeftSlot.append(trophyLeft)
 }
