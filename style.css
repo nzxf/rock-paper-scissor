@@ -22,8 +22,8 @@ body {
     justify-content: center;
     align-items: center;
 
-    margin-top: 80px;
-    margin-bottom: 100px;
+    margin-top: 60px;
+    margin-bottom: 70px;
     background-color: #f1faee;
     border: 24px solid rgb(52, 151, 212);
     border-radius: 40px;
@@ -50,6 +50,27 @@ body {
 
     width: 500px;
     padding-top: 15px;
+}
+
+#upper-display-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 350px;
+    height: 100px;
+
+    font-size: 24px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: lightsalmon;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+
+    box-shadow: 1px 2px 5px gray;
 }
 
 #playAgain {
@@ -95,12 +116,8 @@ b {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}
 
-.avatar-left,
-.avatar-right {
-    padding: 10px 0;
-    width: 200px;
+    width: 275px;
 }
 
 #control-left,
@@ -109,6 +126,7 @@ b {
     justify-content: center;
     align-items: center;
 
+    margin-top: 10px;
     width: 250px;
 }
 
@@ -142,21 +160,21 @@ button:disabled {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 
-    height: 35px;
-    width: 75px;
+    height: 40px;
+    width: 90px;
 }
 
 .play-mid {
-    height: 35px;
-    width: 75px;
+    height: 40px;
+    width: 90px;
 }
 
 .play-right {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
 
-    height: 35px;
-    width: 75px;
+    height: 40px;
+    width: 90px;
 }
 
 #trophy-left,
@@ -176,12 +194,41 @@ button:disabled {
 #bar-bottom {
     display: flex;
     justify-content: space-between;
-    width: 1100px;
-    padding: 50px 0px;
+    width: 1000px;
 }
 
 #bar-bottom>span,
 #bar-bottom>span>a {
     color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
+}
+
+
+/* animation hand coming in */
+.from-right {
+    animation: from-right 0.3s ease;
+}
+
+@keyframes from-right {
+    0% {
+        transform: translateX(2000px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.from-left {
+    animation: from-left 0.3s ease;
+}
+
+@keyframes from-left {
+    0% {
+        transform: translateX(-2000px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
