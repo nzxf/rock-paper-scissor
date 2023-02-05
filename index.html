@@ -14,16 +14,31 @@
     <div id="bar-top"></div>
     <div id="main-body">
         <div id="body-left">
+            <div id="trophy-left"></div>
+            <div class="score-board">
+                <p id="computer-score" value="">#</p>
+            </div>
             <div>
                 <img class="avatar-left" src="/images/robot.png" alt="picture of a robot">
             </div>
             <div id="control-left">
-                <button>ROX</button>
-                <button>PAP3R</button>
-                <button>CLIPPER</button>
+                <button class="playButton play-left">ROX</button>
+                <button class="playButton play-mid">PAP3R</button>
+                <button class="playButton play-right">CLIPPER</button>
             </div>
         </div>
-        <div id="body-center"></div>
+        <div id="body-center">
+            <div id="upper-display">
+                <div id="upper-display-text"></div>
+                <button id="playAgain">PLAY AGAIN?</button>
+            </div>
+            <div id="middle-display">
+                <div id="middle-display-left"></div>
+                <div id="middle-display-center"></div>
+                <div id="middle-display-right"></div>
+            </div>
+            <div id="display"></div>
+        </div>
         <div id="body-right">
             <div id="trophy-right"></div>
             <div class="score-board">
@@ -33,15 +48,18 @@
                 <img class="avatar-right" src="/images/human.png" alt="picture of a human">
             </div>
             <div id="control-right">
-                <button>ROCK</button>
-                <button>PAPER</button>
-                <button>SCISSOR</button>
+                <button class="playerHand playButton play-left" id="buttonRock" value="rock">ROCK</button>
+                <button class="playerHand playButton play-mid" id="buttonPaper" value="paper">PAPER</button>
+                <button class="playerHand playButton play-right" id="buttonScissor" value="scissor">SCISSOR</button>
             </div>
         </div>
     </div>
     <div id="bar-bottom">
         <span>
             <a href="http://github.com/nzxf">nzxf</a>
+        </span>
+        <span>All Icons by Freepik -
+            <a href="https://www.flaticon.com/free-icons/robotic-hand" title="robotic hand icons">Flaticon</a>
         </span>
     </div>
 
