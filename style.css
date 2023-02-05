@@ -21,6 +21,14 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    margin-top: 80px;
+    margin-bottom: 100px;
+    background-color: #f1faee;
+    border: 24px solid rgb(52, 151, 212);
+    border-radius: 40px;
+
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.75);
 }
 
 #body-center {
@@ -34,38 +42,146 @@ body {
     text-align: center;
 }
 
+#upper-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+    padding-top: 15px;
+}
+
 #playAgain {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
-    #body-left,
-    #body-right {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+    font-size: 24px;
 
-    button {
-        font-size: 12px;
-        font-weight: bold;
-        color: rgba(255, 255, 255, 0.8);
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    width: 140px;
+    height: 100px;
+}
 
-        border: 8px solid rgba(255, 255, 255, 0.2);
-    }
+#middle-display {
+    min-height: 220px;
+    min-width: 500px;
 
-    button:hover {
-        color: white;
-    }
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-    button:active {
-        transform: translate(0.5px, 2px);
-        background-color: rgb(134, 184, 35);
-    }
+#display {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
 
-    button:disabled {
-        background-color: lightgray;
-    }
+    min-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+b {
+    font-size: 16px;
+    margin: 15px 15px;
+}
+
+#body-left,
+#body-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.avatar-left,
+.avatar-right {
+    padding: 10px 0;
+    width: 200px;
+}
+
+#control-left,
+#control-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+}
+
+button {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+    border: 8px solid rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+    background-color: yellowgreen;
+    box-shadow: 1px 2px 5px gray;
+}
+
+button:hover {
+    color: white;
+}
+
+button:active {
+    transform: translate(0.5px, 2px);
+    background-color: rgb(134, 184, 35);
+}
+
+button:disabled {
+    background-color: lightgray;
+}
+
+.play-left {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+    height: 35px;
+    width: 75px;
+}
+
+.play-mid {
+    height: 35px;
+    width: 75px;
+}
+
+.play-right {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    height: 35px;
+    width: 75px;
+}
+
+#trophy-left,
+#trophy-right {
+    height: 35px;
+}
+
+#your-score,
+#computer-score {
+    font-size: 75px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.6);
+
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#bar-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    padding: 50px 0px;
+}
+
+#bar-bottom>span,
+#bar-bottom>span>a {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
