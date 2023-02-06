@@ -4,11 +4,14 @@
     margin: 0;
 
     font-family: Helvetica, sans-serif;
+    /* 
+    border: dotted; */
 }
 
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     background-color: #edede9;
@@ -22,8 +25,8 @@ body {
     justify-content: center;
     align-items: center;
 
-    margin-top: 60px;
-    margin-bottom: 70px;
+    margin-top: 5%;
+    margin-bottom: 5%;
     background-color: #f1faee;
     border: 24px solid rgb(52, 151, 212);
     border-radius: 40px;
@@ -35,9 +38,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    /* 
     min-width: 600px;
-    min-height: 200px;
+    min-height: 200px; */
 
     text-align: center;
 }
@@ -86,10 +89,8 @@ body {
 }
 
 #middle-display {
-    min-height: 220px;
-    min-width: 500px;
-
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -98,7 +99,7 @@ body {
     font-size: 16px;
     color: rgba(0, 0, 0, 0.6);
 
-    min-height: 100px;
+    min-height: 110px;
 
     display: flex;
     flex-direction: column;
@@ -117,7 +118,17 @@ b {
     justify-content: space-evenly;
     align-items: center;
 
-    width: 275px;
+    /* width: 275px; */
+}
+
+#middle-display-left img,
+#middle-display-center img,
+#middle-display-right img {
+    margin: 0 5px;
+}
+
+.avatar-holder img {
+    width: 200px;
 }
 
 #control-left,
@@ -160,25 +171,27 @@ button:disabled {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 
-    height: 40px;
-    width: 90px;
+    height: 35px;
+    width: 80px;
 }
 
 .play-mid {
-    height: 40px;
-    width: 90px;
+    height: 35px;
+    width: 80px;
 }
 
 .play-right {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
 
-    height: 40px;
-    width: 90px;
+    height: 35px;
+    width: 80px;
 }
 
 #trophy-left,
 #trophy-right {
+    display: flex;
+    flex-direction: row;
     height: 35px;
 }
 
@@ -194,13 +207,15 @@ button:disabled {
 #bar-bottom {
     display: flex;
     justify-content: space-between;
-    width: 1000px;
+    align-items: center;
+    width: 40%;
 }
 
 #bar-bottom>span,
 #bar-bottom>span>a {
     color: rgba(0, 0, 0, 0.5);
     text-decoration: none;
+    text-align: center;
 }
 
 
@@ -230,5 +245,121 @@ button:disabled {
 
     100% {
         transform: translateX(0);
+    }
+}
+
+
+/* small display */
+@media (max-width: 960px) {
+    #main-body {
+        flex-direction: column;
+    }
+
+    #body-center {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #upper-display {
+        padding: 15px 0;
+        width: 300px;
+    }
+
+    #playAgain {
+        font-size: 15px;
+        width: 150px;
+        height: 60px;
+    }
+
+    #upper-display-text {
+        font-size: 15px;
+        width: 350px;
+        height: 60px;
+    }
+
+    #body-left,
+    #body-right {
+        height: 120px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 10px;
+    }
+
+    #trophy-left,
+    #trophy-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 35px;
+    }
+
+    #trophy-left img,
+    #trophy-right img {
+        padding: 2px 0;
+    }
+
+    #your-score,
+    #computer-score {
+        font-size: 50px;
+    }
+
+    .avatar-holder img {
+        width: 90px;
+    }
+
+    #middle-display-left img,
+    #middle-display-center img,
+    #middle-display-right img {
+        width: 120px;
+    }
+
+    #display {
+        min-height: 80px;
+    }
+
+    #display p,
+    #display b {
+        font-size: 0.8em;
+    }
+
+    b {
+        margin: 5px 5px;
+    }
+
+    #control-left,
+    #control-right {
+        flex-direction: column;
+        width: 100px;
+        margin: 5px 0;
+    }
+
+    .play-left {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+
+        height: 35px;
+        width: 90px;
+    }
+
+    .play-mid {
+        height: 35px;
+        width: 90px;
+    }
+
+    .play-right {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 0;
+
+        height: 35px;
+        width: 90px;
+    }
+
+    #bar-bottom {
+        width: 300px;
+        margin: 25px;
     }
 }
