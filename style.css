@@ -4,8 +4,7 @@
     margin: 0;
 
     font-family: Helvetica, sans-serif;
-    /* 
-    border: dotted; */
+    border: dotted;
 }
 
 body {
@@ -38,9 +37,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 
-    min-width: 600px;
-    min-height: 200px; */
+
+    width: 520px;
+    height: 460px;
 
     text-align: center;
 }
@@ -256,8 +255,10 @@ button:disabled {
     }
 
     #body-center {
-        display: flex;
         flex-direction: column-reverse;
+
+        width: 320px;
+        height: 330px;
     }
 
     #upper-display {
@@ -267,7 +268,7 @@ button:disabled {
 
     #playAgain {
         font-size: 15px;
-        width: 150px;
+        width: 160px;
         height: 60px;
     }
 
@@ -306,7 +307,7 @@ button:disabled {
     }
 
     .avatar-holder img {
-        width: 90px;
+        width: 110px;
     }
 
     #middle-display-left img,
