@@ -182,7 +182,7 @@ const bodyLeft = document.querySelector('#body-left')
 bodyLeft.addEventListener('mouseenter', function () {
     addLostAvatar('robot', avatarHolderLeft)
     display.replaceChildren()
-    liveReportBold(`Robot: ${agitatedBot()}`)
+    // liveReportBold(`Robot: ${agitatedBot()}`)
 })
 bodyLeft.addEventListener('mouseleave', function () {
     addAvatar('robot', avatarHolderLeft)
@@ -196,7 +196,8 @@ function agitatedBot() {
         "I swear if you touch me one more time!",
         "Hey, that was rude!",
         "I will CRUSH you!",
-        "You know how to play this, right?"]
+        "You know how to play this, right?",
+        "Hey!! That's my button"]
     let random = Math.floor(Math.random() * agitations.length)
     return agitations[random]
 }
@@ -204,7 +205,8 @@ const botButtons = document.querySelectorAll('#control-left button')
 botButtons.forEach(button => button.addEventListener('click', function () {
     addLostAvatar('robot', avatarHolderLeft)
     display.replaceChildren()
-    liveReportBold(`Robot: Hey!! That's my ${button.value.toLowerCase()} button!!!`)
+    liveReportBold(`Robot: ${agitatedBot()}`)
+    // liveReportBold(`Robot: Hey!! That's my ${button.value.toLowerCase()} button!!!`)
 }))
 
 //add image and animation hands move
